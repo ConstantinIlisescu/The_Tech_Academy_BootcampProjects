@@ -1,0 +1,54 @@
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+body {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#page-container {
+  position: relative;
+  min-height: 96vh;
+}
+
+#content-wrap {
+  padding-bottom: 2rem; /* Footer height */
+}
+
+#footer {
+  position: absolute;
+  width: 600px;
+  bottom: 0px;
+  height: 2rem; /* Footer height */
+}
+
+
+
+input {
+  padding-top: 30px;
+  width: 500px;
+  height: 60px;
+  font-size: 40px;
+  border: none;
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
+}
+
+li {
+  text-align: left;
+  font-size: 40px;
+  list-style: none;
+  margin: none;
+}
+
+.remove {
+    padding: 10px;
+    
+}
+
+
