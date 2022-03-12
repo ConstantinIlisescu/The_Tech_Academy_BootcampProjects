@@ -1,0 +1,598 @@
+/***** GENERAL STYLING *****/
+html {
+  scroll-behavior: smooth;
+}
+
+/* Body */
+body {
+  margin: 0%; /* This ensures the site displays all the way to the edge of the browser screen */
+  padding: 0;
+  overflow-x: hidden; /* Hide scrollbars on the bottom*/
+}
+
+/* Sticky button */
+.stickyFormButton {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  border: 2px solid green;
+  background-color: rgba(232, 243, 233, 0.4);
+  z-index: 222222;
+  cursor: pointer;
+  border-radius: 12px;
+  padding: 10px;
+}
+/* END Sticky button */
+
+/* Heading 1 and 2 elements */
+h1,
+h2,
+h3 {
+  text-transform: uppercase; /* Capitalizing all h1 headings */
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; /* Sets the font family of all h1 headings */
+  text-align: center; /* Centering all h1 elements */
+  color: #1a1a1a;
+  transition: transform 1s;
+  transform: scale(1);
+}
+
+h1 {
+  margin-top: 0; /* Adds a small margin above h1 elements */
+  font-size: 5vw;
+}
+
+#slideShow > div > img {
+  margin-top: 10px;
+}
+
+h2 {
+  font-size: 2vw;
+}
+
+h3 {
+  font-size: 1.5vw;
+}
+
+/* Heading 1 element hover effect */
+h1:hover,
+h2:hover,
+h3:hover {
+  filter: grayscale(5%);
+  /* Adds a slightly gray filter to the h1 headings when hovered over */
+  transform: scale(1.1);
+  /* When the h1 elements are hovered over they increase in size by 1.1 */
+  transition: transform 1s;
+  /* This causes the transformation to last 1 second */
+}
+
+/* Styling for portfolio title text */
+.white-text {
+  color: #fff; /* This is used to change the color of the portfolio title text */
+  margin-top: -20px;
+  margin-bottom: 40px;
+}
+
+/* Paragraph elements */
+p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-align: justify; /* Justify text within paragraph elements */
+  letter-spacing: 0; /* This expands the text slightly */
+  font-size: 1vw;
+  padding-left: 20px; /* Adds padding to the left of the paragraph element */
+  padding-right: 20px; /* Adds padding to the right of the paragraph element */
+  /* transition: transform 1s;
+  transform: scale(1); */
+}
+
+/* Paragraph element hover effect */
+/* p:hover {
+  transition: transform 1s; /* This makes the transform effect last 1 second */
+/* transform: scale(1.1); */
+
+/* This makes the paragraphs increase slightly in size when hovered over */
+/* } */
+
+/* Center class - this applies to all elements with the class "center" */
+.center {
+  text-align: center; /* This center aligns the text */
+  margin: auto;
+  /* transition: transform 1s;
+  transform: scale(1); */
+}
+
+.padding-main {
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 30px;
+}
+
+.padding-github {
+  padding-bottom: 0px;
+}
+
+.contact-image img {
+  padding-top: 20px;
+}
+
+/* Center class hover effect - This only affects the quote, github link, and footer */
+/* .center:hover {
+  transition: transform 1s; 
+  transform: scale(1.1); 
+} */
+
+/* Anchor elements */
+a {
+  color: blue; /* This ensures all links are blue */
+}
+
+/* Quotation elements */
+q {
+  font-style: italic; /* This makes the quote italicized */
+  font-size: 1.2vw;
+}
+
+/* Image elements */
+img {
+  filter: grayscale(75%); /* This rids our pictures of 75% of their color */
+  border-radius: 8px; /* Gives all images slightly rounded corners */
+  max-width: 100%; /* Ensures all images stay within the width of their container */
+  height: 350px; /* Sets the height of all images */
+  display: block; /* By specifying block display we can ensure our images are able to be centered */
+  margin-left: auto; /* In combination with "margin-right: auto" this centers all images */
+  margin-right: auto;
+  transition: transform 1s;
+  transform: scale(1);
+}
+
+.about-image img,
+.GitHub-logo img {
+  height: 500px;
+}
+
+/* Image element hover effects */
+img:hover {
+  filter: grayscale(5%);
+  /* Brings back most of the image's color when hovered over */
+  transition: transform 1s; /* Transition lasts 1 second */
+  transform: scale(1.1); /* Image is increased slightly when hovered over */
+}
+
+/* Styling for footer element */
+footer {
+  padding: 1%; /* This gives the footer padding that is equal to 2% of the width of the element's area */
+  background-color: #f2f2f2;
+}
+/***** END OF GENERAL STYLING *****/
+
+/***** NAVBAR STYLING *****/
+.Navbar {
+  overflow: hidden; /* This ensures that any content that overflows beyond the boundary of our nav bar is not displayed */
+  background-color: rgba(0, 0, 0, 0.8); /* This colors the navbar black */
+  position: fixed; /* This keeps the navbar at the top of the screen as we scroll */
+  top: 0; /* This ensures no space is displayed above the navbar */
+  width: 100%; /* This makes the navbar span the entire width of the page */
+  z-index: 1; /* This ensures other elements don't display over the navbar */
+  -webkit-animation: moveNav 5s; /* This applies the moveNav animation below for Safari 4.0 - 8.0 */
+  animation: moveNav 5s; /* This applies the moveNav animation for all other browsers */
+}
+
+/* PopUp Form styling*/
+
+/* Button used to open the contact form */
+.contact-form,
+.GitHub-text {
+  display: grid;
+}
+.button-center {
+  text-align: center;
+  margin: auto;
+}
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  top: 150px;
+  left: 50%;
+  margin-left: -250px;
+  border: 3px solid #f1f1f1;
+  z-index: 1111;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 500px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type="text"],
+.form-container input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn,
+.btn-cancel-slide {
+  background-color: #04aa6d;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel,
+.btn-cancel-slide {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover,
+.open-button:hover .btn-cancel-slide:hover {
+  opacity: 1;
+}
+/* End of PopUp Form */
+
+/* pop up slide swow */
+#slideShow {
+  z-index: 1111;
+  display: none;
+  margin: 80px auto;
+  position: relative;
+  top: 0;
+  width: 70vw;
+  height: 70vh;
+  padding: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+#slideShow > div {
+  position: absolute;
+  top: 200px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+}
+
+/* end of slide show */
+
+/* moveNav animation effect for moving the nav bar in from the left of the screen */
+@keyframes moveNav {
+  from {
+    left: 200vw;
+  } /* The navbar is starting off screen to the right */
+  to {
+    left: 0vw;
+  } /* This moves the navbar into place on the screen */
+}
+
+/* Navbar links */
+.Navbar a {
+  float: left; /* This specifies that the text floats on the left on the navbar */
+  display: block; /* This ensures that other text will be displayed on the same line or row, instead of a new line */
+  color: white; /* This is the font color for text on our navbar */
+  padding: 14px 16px; /* This adds padding around our text */
+  text-decoration: none; /* This gets rid of the underlines under the text on our navbar */
+  font-family: Avant Garde, Helvetica; /* This specifies the font family for text on our navbar */
+  font-size: 20px; /* This specifies the font size for text on our navbar */
+  text-align: center; /* This centers the text within its container */
+  position: relative; /* This sets the text relative to its normal positioning, allowing us to use the animation below */
+  -webkit-animation: moveNavText 5.75s; /* Animation for Safari 4.0 - 8.0 */
+  animation: moveNavText 5.75s; /* Applies the moveNavText animation for 5.75s */
+}
+
+/* moveNavText animation effect for moving the navbar text from above the view to the navbar */
+@keyframes moveNavText {
+  from {
+    top: -100vw;
+  } /* This sets the navbar text 100% above the viewport */
+  to {
+    top: 0vw;
+  } /* This lowers the navbar text onto the navbar */
+}
+
+/* Navbar hover effects */
+.Navbar a:hover {
+  background-color: #f5eef8; /* Defines the background color that will display when you hover over the link */
+  color: black; /* This defines the font color that will display when navbar a elements are hovered over */
+  font-weight: bold; /* This makes the text on the navbar bold when hovered over */
+}
+
+/* Navbar home button */
+.Navbar a.active {
+  /* This targets the a element on the navbar with the "active" class */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/***** END OF NAVBAR STYLING *****/
+
+/***** VIDEO STYLING *****/
+/* Formatting for background video */
+#video {
+  position: fixed; /* This fixes the video to the page */
+  top: -180px; /* This ensures there is no space between the edge of the video and the edge of the page */
+  left: -50px; /* This ensures no space between the bottom of the video and the bottom of the page */
+  min-width: 100%; /* This ensures the video is displayed across the full width of the page */
+  min-height: 100%;
+  z-index: -1; /* This places the video behind the other elements on the page */
+}
+
+/* Texts over the video */
+.Video_Text {
+  background: rgba(0, 0, 0, 0.5);
+  /* This provides a semi-transparent background for the text to sit over */
+  color: white;
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  position: relative;
+  -webkit-animation: moveVideoText 5.75s;
+  animation: moveVideoText 5.75s;
+}
+
+/* This animation effect causes the overlay video text to move up from the bottom of the page upon page load */
+@keyframes moveVideoText {
+  from {
+    top: -100vw;
+  } /* This sets the position of the video text to above the viewport */
+  to {
+    top: 0vw;
+  } /* This moves the video text to the normal positioning on the viewport */
+}
+/***** END OF VIDEO STYLING *****/
+
+/***** TABLE STYLING -  this section covers the styling of the columns and rows within the table *****/
+* {
+  /* The asterisk is a universal selector that applies this effect to all elements on the page */
+  box-sizing: border-box; /* This creates a box with a border within which we will place most of our text */
+}
+
+.Column_1 {
+  float: left;
+  width: 50%; /* This ensures the column takes up half of the page width */
+  padding: 30px;
+  padding-top: 3%;
+  height: 600px;
+  background-color: #f5eef8;
+}
+
+.Column_2 {
+  float: left;
+  width: 50%;
+  padding: 30px;
+  padding-top: 1.9%;
+  height: 600px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* This class is applied to the columns in the final row, overriding the height and padding to provide more room for the contact form  while keeping the rest of the formatting from Column_1 or Column_2 */
+.Column_tall {
+  padding-top: 3.5%;
+  height: 450px;
+}
+
+/* This inserts something after the content of selected elements (in this case the elements with class "Row") */
+.Row:after {
+  content: ""; /* By leaving this blank, we are allowing the footer (covered lower down) to be displayed - removing it makes the footer overwrite a column */
+  display: table; /* The display property specifies the type of display behavior; the table value tells the browser to treat the element as a table */
+  clear: both; /* This clears any other elements from floating on the left or the right of an element */
+}
+/***** END OF TABLE STYLING *****/
+
+/***** CONTACT FORM STYLING *****/
+/* input[type=text] targets all text input sections of the contact form */
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* This creates a box with a border around the contact form input boxes */
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical; /* This allows the user to resize the text boxes vertically */
+  font-family: Perpetua, Rockwell Extra Bold;
+}
+
+/* Hover effects for input boxes */
+input[type="text"]:hover {
+  box-shadow: 0 0 5px #00004d inset;
+}
+
+/* Submit button */
+input[type="submit"] {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Perpetua, Rockwell Extra Bold;
+}
+
+/* Hover effect for submit button */
+input[type="submit"]:hover {
+  background-color: white;
+  color: black;
+  transform: scale(1.5);
+  transition: transform 1.5s;
+}
+
+/* Form element */
+form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  font-family: "Trebuchet MS", Optima;
+}
+
+/* @media rules */
+
+@media screen and (max-width: 1176px) {
+
+
+  .Video_Text,
+  .Row,
+  footer {
+    width: 800px;
+    position: relative;
+    margin: auto;
+    border-style: none;
+  }
+
+  .Video_Text {
+    height: 850px;
+  }
+
+  .logo {
+    margin-top: -50px;
+  }
+
+  h1.white-text {
+    font-size: 3.3vw;
+    margin-top: -40px;
+  }
+
+  .padding-main {
+    padding: 0 80px 0px 80px;
+  }
+
+  .about-image {
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .about-text {
+    padding-top: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .about-text p {
+    font-size: 12px;
+  }
+
+  a,
+  .Row h1,
+  .Row p,
+  .about-text,
+  .form {
+    color: white;
+  }
+  .GitHub-text {
+    padding-top: 80px;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .contact-form {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .form {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  /* Screens 576px and smaller will display navbar links equally distributed */
+  .Navbar a {
+    width: 25%;
+    font-size: 50px;
+  }
+
+  .logo img {
+    margin-top: 250px;
+    height: 800px;
+  }
+
+  .Video_Text {
+    height: 1500px;
+  }
+
+  .Video_Text h1 {
+    font-size: 3em;
+  }
+
+  .Video_Text h2 {
+    font-size: 2em;
+  }
+
+  .Video_Text h3 {
+    font-size: 1.5em;
+  }
+  div.Column_1.about-text {
+    height: fit-content;
+    width: 100%;
+  }
+
+  .about-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .GitHub-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .GitHub-text p {
+    font-size: 1.5rem;
+  }
+
+  .about-text p {
+    font-size: 2rem;
+  }
+
+  .about-image,
+  .contact-image {
+    display: none;
+  }
+  .contact-form {
+    width: 100%;
+    height: 100%;
+  }
+  .form {
+    width: 90%;
+    margin: auto;
+  }
+
+  .contact-form h1 {
+    font-size: 2.5rem;
+  }
+
+  .contact-form form {
+    font-size: 1.8rem;
+  }
+
+  .button {
+    width: 75%;
+    font-size: 2.5rem;
+  }
+
+  footer p {
+    font-size: 1.5rem;
+  }
+}
+
+/***** END OF CONTACT FORM STYLING *****/

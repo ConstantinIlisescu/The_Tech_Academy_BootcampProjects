@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <!--Head-->
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/x-icon" href="./images/favicon.png">
+        <title>c0ste WebDev</title>
+        <link rel="stylesheet" type="text/css" href="stylesheet/portfolio.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="/js/main.js"></script>
+    </head>
+
+    <!--Body-->
+
+    <body class="Background">
+
+        <div id="main">
+
+            <!--Navbar-->
+            <div class="Navbar">
+                <a class="active" href="#Home">Home</a>
+                <a href="#About">About</a>
+                <a href="#GitHub">GitHub</a>
+                <a href="#Contact">Contact</a>
+            </div>
+
+            <!--Breaks inserted to add space between navbar and the first heading-->
+            <br>
+            <br>
+
+            <!--Background video-->
+            <div id="Home">
+                <video autoplay muted id="video">
+                    <source src="images/video/laptop.mp4" type="video/mp4">
+                    <!--Display message if video fails to run-->
+                    Your browser does not support HTML5 video / Video by Artem Podrez from Pexels.
+                </video>
+            </div>
+
+            <!--Video text-->
+            <div class="Video_Text">
+                <div class="logo">
+                    <img src="images/logo_transparent_white.png" alt="coste webdev logo">
+                </div>
+                <h1 class="white-text">Welcome to my Web Page</h1>
+                <hr style="width: 600px;">
+                <br>
+                <h2 class="white-text">My name is Constantin</h2>
+                <!-- <h3 class="white-text">Welcome to my portfolio website</h3> -->
+                <!-- <strong>
+                <p class="center padding-main">
+                    <q>
+                        To become successful online, you only need to remember the following :
+                        Good Heart + Passion + Web Design + SEO + Digital Marketing
+                        Dedication + Positiveness + Patience = <span style="color:greenyellow;"> Success </span>
+                    </q>- Dr. Christopher Dayagdag
+                </p>
+            </strong> -->
+            </div>
+
+            <!--About section-->
+            <div class="Row" id="About">
+                <!--Left column-->
+                <div class="Column_2 about-image ">
+                    <img src="images/about.png" alt="a men next to a lake">
+                </div>
+                <!--Right column-->
+                <div class="Column_1 about-text">
+                    <h1>About</h1>
+                    <p>
+                        I am a Web Developer who loves to code! I also enjoy spending time with my wife and
+                        visit new places.
+                        <br>
+                        <br>I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech
+                            Academy</a>’s Software Developer Boot Camp, trained and experienced in the following web and
+                        programming languages: HTML, CSS, JavaScript, SQL, C# and more.
+                        <br>
+                        <br>I am a full-stack developer and would love to work with you on your project. <a
+                            href="#Contact">Contact</a> me below!
+                    </p>
+                </div>
+            </div>
+
+            <!--GitHub section-->
+            <div class="Row" id="GitHub">
+                <!--Left column-->
+                <div class="Column_1 GitHub-text">
+                    <h1 class="center padding-github">GitHub</h1>
+                    <p class="center">
+                        You can view my projects code by clicking the GitHub image on the right!
+                        <br>
+                        <br>
+                        Or
+                        <br>
+                    </p>
+                    <button class="open-button button-center" onclick="openSlide()">Open the Projects Photo
+                        Gallery</button>
+                </div>
+                <!--Right column-->
+                <div class="Column_2 GitHub-logo">
+                    <a href="https://github.com/ConstantinIlisescu" target="_blank"><img src="images/GitHub.png"
+                            alt="GitHub Logo"></a>
+                </div>
+            </div>
+
+
+
+            <!--Contact section-->
+            <div class="Row" id="Contact">
+                <!--Contact image, left column-->
+                <div class="Column_2 Column_tall contact-image">
+                    <img src="images/contact-me.jpg" alt="Contact_Image">
+                </div>
+                <!--Contact form, right column-->
+                <div class="Column_1 Column_tall contact-form">
+                    <h1>Contact Me</h1>
+                    <button class="open-button button-center" onclick="openForm()">Open Form</button>
+                </div>
+            </div>
+
+
+            <div class="form-popup form-container" id="myForm">
+                <!--This specifies where and how to send the form data; we are leaving it blank-->
+                <form class="form" action="" method="POST">
+                    <!-- Here we are utilizing a 3rd party service to submit the contact form data, insert your formspree endpoint in the action attribute -->
+                    <label>Name:</label>
+                    <input type="text" placeholder="Please enter your name here">
+                    <label>Email:</label>
+                    <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
+                    <label>Message:</label>
+                    <input type="text" id="Message" name="Message" placeholder="Please write your message here">
+                    <input class="button btn" type="submit" value="SUBMIT">
+                    <button type="button" class="btn cancel" onclick="closeForm()">Close the Form</button>
+                </form>
+            </div>
+            <!--Footer section-->
+
+            <!-- Sticki button -->
+            <button class="stickyFormButton" onclick="openForm()">Contact Me</button>
+            <!-- End sticky button -->
+
+            <footer>
+                <p>
+                <p class="center">c0ste WebDev | Copyright &copy
+                    <script type="text/javascript"> document.write(new Date().getFullYear());</script>
+                </p>
+                <br>
+                </p>
+            </footer>
+        </div>
+
+        <!-- pop up slide show -->
+        <div id="slideShow">
+            <button type="button" class="btn-cancel-slide" onclick="closeSlide()">Close the slide</button>
+            <h1 >My Projects</h1>
+            <div>
+                <img src="/images/project1.png">
+            </div>
+            <div>
+                <img src="/images/project2.png">
+            </div>
+            <div>
+                <img src="/images/project3.png">
+            </div>
+        </div>
+        <!-- end of slide show -->
+
+
+
+    </body>
+
+</html>
