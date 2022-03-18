@@ -17,11 +17,11 @@ function placeXOrO(squareNumber) {
         // This condition checks who's turn it is.
         if (activePlayer === "X") {
             // if player is X , x.png image placed in HTML element
-            select.style.backgroundImage = "url('images/x.png')";
+            select.style.backgroundImage = "url('/Projects/TicTacToe/images/x.png')";
             // Active player may only be X or O. so if not X than else is O
         } else {
             // display o.png if activePlayer = O
-            select.style.backgroundImage = "url('images/o.png')"
+            select.style.backgroundImage = "url('/Projects/TicTacToe/images/o.png')"
         }
 
 
@@ -41,7 +41,7 @@ function placeXOrO(squareNumber) {
 
 
         //This function plays placement sound
-        audio('./media/place.mp3');
+        audio('/Projects/TicTacToe/media/place.mp3');
 
 
         //Checks to see if it's computers turn.
@@ -141,7 +141,7 @@ function checkWinConditions() {
     else if (selectedSquares.length >= 9) {
 
         //Plays a tie song
-        audio('./media/tie.mp3');
+        audio('/Projects/TicTacToe/media/tie.mp3');
 
         //Sets a 0.3 second time before the resetGame gets called.
         setTimeout(function () { resetGame(); }, 1000)
@@ -284,7 +284,7 @@ function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
     disableClick();
 
     //This line plays the win sounds.
-    audio('./media/winGames.mp3');
+    audio('/Projects/TicTacToe/media/winGames.mp3');
 
     //This line calls the main animation loop.
     animateLineDrawing();
